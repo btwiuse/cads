@@ -11,7 +11,7 @@ chapters, a cleaning pipeline, and a memory/wiki system for research notes.
 - `cleaned/01.md`–`20.md` — chapter texts cleaned by `clean_text.ts` (headers/footers/page numbers removed). Preferred base for text analysis and quotes.
 - `clean_text.ts` — Deno cleaning script (`deno run -A clean_text.ts`).
 - `memory/` — research notes, one file per topic, with `Home.md` as the index (auto-loaded each session via `option context-path` in `.crushrc`). This directory is a git submodule whose remote is the wiki repo `btwiuse/cads.wiki`.
-- `scripts/sync-wiki.sh` — publishes `memory/` to the wiki (`README.md` → `Home.md`, everything else verbatim).
+- `scripts/sync-wiki.sh` — publishes `memory/` to the wiki (`Home.md` is the front page).
 
 ## Rules
 
