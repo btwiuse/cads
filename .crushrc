@@ -1,0 +1,28 @@
+AGW=${AGW:-https://api.deepseek.com}
+
+provider add deepseek \
+  --type openai-compat \
+  --base-url "${AGW}/v1" \
+  --api-key "-"
+
+provider add stepfun \
+  --type openai-compat \
+  --base-url "${AGW}/v1" \
+  --api-key "-"
+
+provider add minimax-china \
+  --type anthropic \
+  --base-url "${AGW}/anthropic" \
+  --api-key "-"
+
+model small stepfun/step-3.7-flash
+model large stepfun/step-3.7-flash
+
+model small minimax-china/MiniMax-M3
+model large minimax-china/MiniMax-M3
+
+model small deepseek/deepseek-v4-flash --reasoning-effort high
+model large deepseek/deepseek-v4-flash --provider-options '{"reasoning_effort": "max"}'
+
+option ui transparent false
+option context-path memory/Home.md
